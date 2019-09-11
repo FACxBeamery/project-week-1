@@ -20,7 +20,7 @@ html, body {
 }
 
 .form > p {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .form__input {
@@ -28,17 +28,20 @@ html, body {
     height: 5vh;
     border: none;
     border-bottom: 2px solid #484041;
-    margin-bottom: 2rem;
     outline: none;
     font-size: 1.1rem;
     font-family: 'Inconsolata', monospace;
 }
 
+.form__input--red {
+    border-bottom: 2px solid red;
+}
+
 .form__label {
     font-weight: bold;
     color: #43C6C3;
+    margin-top: 1rem;
 }
-
 
 .form__button {
     font-size: 1.3rem;
@@ -47,4 +50,16 @@ html, body {
     font-family: 'Inconsolata', monospace;
     color: #484041;
     font-weight: bold;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.form__button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed; 
+}
+
+.form__warning {
+    color: #b70707;
+    font-size: 0.7rem;
 }
