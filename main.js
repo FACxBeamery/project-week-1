@@ -1,6 +1,18 @@
+document.getElementById('firstname').addEventListener("input", (event) => { 
+    document.getElementById('test-button').disabled = false;
+    document.getElementById('test-button').classList.remove('form__button--disabled');
+});
+
+document.getElementById('lastname').addEventListener("input", (event) => { 
+    document.getElementById('test-button').disabled = false;
+    document.getElementById('test-button').classList.remove('form__button--disabled');
+});
+
 document.getElementById('password').addEventListener("input", (event) => {
     let messagesContainer = document.getElementById('messages');
     messagesContainer.innerHTML = '';
+    document.getElementById('test-button').disabled = false;
+    document.getElementById('test-button').classList.remove('form__button--disabled');
     // let firstName = document.getElementById('firstname').value;
     // let lastName = document.getElementById('lastname').value;
     let password = event.target.value;
@@ -29,24 +41,28 @@ document.getElementById('password').addEventListener("input", (event) => {
     if (regex1.test(password)) {
         let msg1 = document.createElement("p");
         let node1 = document.createTextNode("✅ At least 6 alphanumerical characters long");
+        msg1.classList.add('regex');
         msg1.appendChild(node1);
         messagesContainer.appendChild(msg1);
     }
     if (regex2.test(password)) {
         let msg2 = document.createElement("p");
         let node2 = document.createTextNode("✅ At least one upper case letter");
+        msg2.classList.add('regex');
         msg2.appendChild(node2);
         messagesContainer.appendChild(msg2);
     }
     if (regex3.test(password)) {
         let msg3 = document.createElement("p");
         let node3 = document.createTextNode("✅ At least one lower case letter");
+        msg3.classList.add('regex');
         msg3.appendChild(node3);
         messagesContainer.appendChild(msg3);
     }
     if (regex4.test(password)) {
         let msg4 = document.createElement("p");
         let node4 = document.createTextNode("✅ At least one number");
+        msg4.classList.add('regex');
         msg4.appendChild(node4);
         messagesContainer.appendChild(msg4);
     }
@@ -57,13 +73,25 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     event.target.disabled = 'disabled';
     event.target.classList.add('form__button--disabled');
 
+    if (document.getElementsByTagName('button').length > 1) {
+        document.getElementById('form').removeChild(document.getElementsByTagName('button')[1]);
+    }
+
     let button = document.createElement("button");
+    button.classList.add('form__button')
+    button.style.color = "#d46d1e";
     button.innerHTML = "RESET FORM";
     let form = document.getElementById("form");
     form.appendChild(button);
-    button.addEventListener ("click", () => {
-    
-
+    button.addEventListener("click", (event) => {
+        var elements = form.getElementsByTagName('p');
+        while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+        var inputs = form.getElementsByTagName('input');
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].classList.remove('form__input--red')
+        }
+        document.getElementById('test-button').disabled = false;
+        document.getElementById('test-button').classList.remove('form__button--disabled');
     });
 
     let messagesContainer = document.getElementById('messages');
@@ -109,4 +137,34 @@ document.getElementById('test-button').addEventListener("click", (event) => {
         msgLastName.appendChild(nodeLastName);
         messagesContainer.insertBefore(msgLastName, messagesContainer.childNodes[0]);
     }
+
+    let passwordStrength = document.createElement("p");
+    let score = '';
+
+    switch (document.getElementsByClassName('regex').length) {
+        case 0:
+            score = 'Password Strength: BADDDD 👺';
+            break;
+        case 1:
+            score = 'Password Strength: MEH 🤒';
+            break;
+        case 2:
+            score = 'Password Strength: GOOD 🧐';
+            break;
+        case 3:
+            score = 'Password Strength: YAY, you can do better, though. 💃 ';
+            break;
+        case 4:
+            score = 'Password Strength: EXCELLENT 🙏';
+            break;
+        default:
+            break;
+    }
+
+    let nodePassword = document.createTextNode(score);
+    passwordStrength.appendChild(nodePassword);
+    passwordStrength.classList.add('password-strength')
+    messagesContainer.insertBefore(passwordStrength, messagesContainer.childNodes[0]);
+
+
 });
