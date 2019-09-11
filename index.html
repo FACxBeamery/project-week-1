@@ -4,34 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap" rel="stylesheet">
     <title>FAC - Project 1</title>
 </head>
 <body>
-    <header>
-        <h1>How strong is your Password?</h1>
-        <h4>add description</h4>
+    <header class="header">
+        <h1 class="header__title">How strong is your Password?</h1>
+        <h4 class="header__subtitle">add description</h4>
     </header>
-    
-    <nav>
-        
-    </nav>
-    
-    <form action="">
+
+    <form action="" class="form">
         <p>Please provide some details</p>
-        <label for="firstname">First Name</label>
-        <input required type="text" name="firstname" id="firstname">
-        <label for="lastname">Last Name</label>
-        <input required type="text" name="lastname" id="lastname">
-        <label for="password">Your password</label>
-        <input required type="text" name="password" id="password">
-        <button type="submit">Test</button>
+        <label class="form__label" for="firstname">First Name</label>
+        <input class="form__input" required type="text" name="firstname" id="firstname">
+        <label class="form__label" for="lastname">Last Name</label>
+        <input class="form__input" required type="text" name="lastname" id="lastname">
+        <label class="form__label" for="password">Your password</label>
+        <input class="form__input" required type="text" name="password" id="password">
+        <button class="form__button" type="submit" id="test-button">TEST</button>
     </form>
     <div id="messages">
         
     </div>
     
     <footer>
-        <h4>Add some random message</h4>
+        <h4>FOOTER: Add some random message</h4>
     </footer>
     
 </body>
