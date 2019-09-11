@@ -63,3 +63,10 @@ html, body {
     color: #b70707;
     font-size: 0.7rem;
 }
+
+.password-strength {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background: #ceecec;
+    box-shadow: 7px 8px 0px rgb(155, 108, 218);
+}
