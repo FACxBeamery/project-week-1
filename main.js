@@ -54,10 +54,49 @@ document.getElementById('password').addEventListener("input", (event) => {
 
 document.getElementById('test-button').addEventListener("click", (event) => {
     event.preventDefault();
+    event.target.disabled = 'disabled';
+    event.target.classList.add('form__button--disabled');
+
+    let button = document.createElement("button");
+    button.innerHTML = "RESET FORM";
+    let form = document.getElementById("form");
+    form.appendChild(button);
+    button.addEventListener ("click", () => {
+    
+
+    });
+
     let messagesContainer = document.getElementById('messages');
-    let firstName = document.getElementById('firstname').value;
-    let lastName = document.getElementById('lastname').value;
-    let password = document.getElementById('password').value;
+    let firstNameElem = document.getElementById('firstname');
+    let firstName = firstNameElem.value;
+    let lastNameElem = document.getElementById('lastname');
+    let lastName = lastNameElem.value;
+    let passwordElem =  document.getElementById('password');
+    let password = passwordElem.value;
+    if (firstName.length === 0) {
+        let requiredMsg1 = document.createElement("p");
+        let nodeMsg1 = document.createTextNode("This Field is Required.");
+        requiredMsg1.appendChild(nodeMsg1);
+        firstNameElem.classList.add('form__input--red');
+        requiredMsg1.classList.add('form__warning');
+        firstNameElem.after(requiredMsg1);
+    }
+    if (lastName.length === 0) {
+        let requiredMsg2 = document.createElement("p");
+        let nodeMsg2 = document.createTextNode("This Field is Required.");
+        requiredMsg2.appendChild(nodeMsg2);
+        lastNameElem.classList.add('form__input--red');
+        requiredMsg2.classList.add('form__warning');
+        lastNameElem.after(requiredMsg2);
+    }
+    if (password.length === 0) {
+        let requiredMsg3 = document.createElement("p");
+        let nodeMsg3 = document.createTextNode("This Field is Required.");
+        requiredMsg3.appendChild(nodeMsg3);
+        passwordElem.classList.add('form__input--red');
+        requiredMsg3.classList.add('form__warning');
+        passwordElem.after(requiredMsg3);
+    }
     if (firstName.length > 0 && password.toUpperCase().includes(firstName.toUpperCase())) {
         let msgFirstName = document.createElement("p");
         let nodeFirstName = document.createTextNode("❌ Please do not include your first name in your password");
