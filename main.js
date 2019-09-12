@@ -11,6 +11,7 @@ document.getElementById('lastname').addEventListener("input", (event) => {
 document.getElementById('password').addEventListener("input", (event) => {
     resetFormField(event.target);
     resetTestButton();
+
     let messagesContainer = document.getElementById('messages');
     resetMessagesContainer(messagesContainer);
     
@@ -40,7 +41,10 @@ document.getElementById('password').addEventListener("input", (event) => {
 });
 
 document.getElementById('test-button').addEventListener("click", (event) => {
+    // prevent default submission of the form
     event.preventDefault();
+
+    // once clicked, disable the test button
     event.target.disabled = 'disabled';
     event.target.classList.add('form__button--disabled');
 
@@ -108,7 +112,6 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     }
 });
 
-
 /**
  * Removes form field warning below the input box and also the 'red' styling
  * @param {DOM Element} elem 
@@ -152,14 +155,16 @@ const createResetFormButton = (() => {
     let buttonsContainer = document.getElementById('form__buttons-wrapper');
     buttonsContainer.appendChild(button);
     button.addEventListener("click", (event) => {
+        // remove all child elements of form that are a P
         var elements = form.getElementsByTagName('p');
         while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
+
+        // iterate through all input elements and remove the form__input--red class
         var inputs = form.getElementsByTagName('input');
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].classList.remove('form__input--red')
         }
-        document.getElementById('test-button').disabled = false;
-        document.getElementById('test-button').classList.remove('form__button--disabled');
+        resetTestButton();
     });
 });
 
