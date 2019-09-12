@@ -61,13 +61,14 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     let lastName = lastNameElem.value;
     let passwordElem =  document.getElementById('password');
     let password = passwordElem.value;
-    if (firstName.length === 0) {
+    
+    if (firstName.length === 0 && !firstNameElem.classList.contains('form__input--red')) {
         addFormWarning(firstNameElem); 
     }
-    if (lastName.length === 0) {
+    if (lastName.length === 0 && !lastNameElem.classList.contains('form__input--red')) {
         addFormWarning(lastNameElem);
     }
-    if (password.length === 0) {
+    if (password.length === 0 && !passwordElem.classList.contains('form__input--red')) {
         addFormWarning(passwordElem);
     }
     if (firstName.length > 0 && password.toUpperCase().includes(firstName.toUpperCase())) {
