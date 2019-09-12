@@ -84,8 +84,3 @@ html, body {
     margin: auto;
     display: block;
 }
-
-.form__buttons-wrapper{
-    display: flex;
-    justify-content: space-between; 
-}
