@@ -72,7 +72,8 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     button.style.color = "#d46d1e";
     button.innerHTML = "RESET FORM";
     let form = document.getElementById("form");
-    form.appendChild(button);
+    let buttonsContainer = document.getElementById('form__buttons-wrapper');
+    buttonsContainer.appendChild(button);
     button.addEventListener("click", (event) => {
         var elements = form.getElementsByTagName('p');
         while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
