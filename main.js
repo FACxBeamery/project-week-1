@@ -13,21 +13,7 @@ document.getElementById('password').addEventListener("input", (event) => {
     messagesContainer.innerHTML = '';
     document.getElementById('test-button').disabled = false;
     document.getElementById('test-button').classList.remove('form__button--disabled');
-    // let firstName = document.getElementById('firstname').value;
-    // let lastName = document.getElementById('lastname').value;
     let password = event.target.value;
-    // if (firstName.length > 0 && password.toUpperCase().includes(firstName.toUpperCase())) {
-    //     let msgFirstName = document.createElement("p");
-    //     let nodeFirstName = document.createTextNode("❌Please do not include your first name in your password");
-    //     msgFirstName.appendChild(nodeFirstName);
-    //     messagesContainer.appendChild(msgFirstName);
-    // }
-    // if (lastName.length > 0 && password.toUpperCase().includes(lastName.toUpperCase())) {
-    //     let msgLastName = document.createElement("p");
-    //     let nodeLastName = document.createTextNode("❌Please do not include your last name in your password");
-    //     msgLastName.appendChild(nodeLastName);
-    //     messagesContainer.appendChild(msgLastName);
-    // }
 
     // At least 6 alphanumerical characters long
     let regex1 = /^[A-Za-z0-9]{6,}$/;
@@ -138,12 +124,14 @@ document.getElementById('test-button').addEventListener("click", (event) => {
         messagesContainer.insertBefore(msgLastName, messagesContainer.childNodes[0]);
     }
 
-    let passwordStrength = document.createElement("p");
+   
     let score = '';
 
     switch (document.getElementsByClassName('regex').length) {
         case 0:
-            score = 'Password Strength: BADDDD 👺';
+            if (password) {
+                score = 'Password Strength: BADDDD 👺';
+            }
             break;
         case 1:
             score = 'Password Strength: MEH 🤒';
@@ -161,10 +149,13 @@ document.getElementById('test-button').addEventListener("click", (event) => {
             break;
     }
 
-    let nodePassword = document.createTextNode(score);
-    passwordStrength.appendChild(nodePassword);
-    passwordStrength.classList.add('password-strength')
-    messagesContainer.insertBefore(passwordStrength, messagesContainer.childNodes[0]);
-
-
+    if (messagesContainer.getElementsByClassName('password-strength').length > 0) {
+        messagesContainer.getElementsByClassName('password-strength')[0].textContent = score;
+    } else  {
+        let passwordStrength = document.createElement("p");
+        let nodePassword = document.createTextNode(score);
+        passwordStrength.appendChild(nodePassword);
+        passwordStrength.classList.add('password-strength')
+        messagesContainer.insertBefore(passwordStrength, messagesContainer.childNodes[0]);
+    }
 });
