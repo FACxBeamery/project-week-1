@@ -64,7 +64,7 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     event.target.classList.add('form__button--disabled');
 
     if (document.getElementsByTagName('button').length > 1) {
-        document.getElementById('form').removeChild(document.getElementsByTagName('button')[1]);
+        document.getElementById('form__buttons-wrapper').removeChild(document.getElementsByTagName('button')[1]);
     }
 
     let button = document.createElement("button");
@@ -158,7 +158,7 @@ document.getElementById('test-button').addEventListener("click", (event) => {
 
     if (messagesContainer.getElementsByClassName('password-strength').length > 0) {
         messagesContainer.getElementsByClassName('password-strength')[0].textContent = score;
-    } else  {
+    } else if (password.length > 0) {
         let passwordStrength = document.createElement("p");
         let nodePassword = document.createTextNode(score);
         passwordStrength.appendChild(nodePassword);
