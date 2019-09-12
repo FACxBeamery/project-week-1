@@ -1,14 +1,18 @@
 document.getElementById('firstname').addEventListener("input", (event) => { 
+    resetFormField(event.target);
     document.getElementById('test-button').disabled = false;
     document.getElementById('test-button').classList.remove('form__button--disabled');
 });
 
 document.getElementById('lastname').addEventListener("input", (event) => { 
+    resetFormField(event.target);
     document.getElementById('test-button').disabled = false;
     document.getElementById('test-button').classList.remove('form__button--disabled');
 });
 
 document.getElementById('password').addEventListener("input", (event) => {
+    resetFormField(event.target);
+  
     let messagesContainer = document.getElementById('messages');
     messagesContainer.innerHTML = '';
     document.getElementById('test-button').disabled = false;
@@ -157,5 +161,16 @@ document.getElementById('test-button').addEventListener("click", (event) => {
         passwordStrength.appendChild(nodePassword);
         passwordStrength.classList.add('password-strength')
         messagesContainer.insertBefore(passwordStrength, messagesContainer.childNodes[0]);
+    }
+});
+
+const resetFormField = ((elem) => {
+    if (elem.classList.contains('form__input--red')) {
+        // remove next sibling 
+        if(elem && elem.nextSibling) {
+            elem.parentNode.removeChild(elem.nextSibling);
+        }
+        // remove class form__input--red
+        elem.classList.remove('form__input--red');
     }
 });
