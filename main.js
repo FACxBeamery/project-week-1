@@ -120,12 +120,14 @@ document.getElementById('test-button').addEventListener("click", (event) => {
         let msgFirstName = document.createElement("p");
         let nodeFirstName = document.createTextNode("❌ Please do not include your first name in your password");
         msgFirstName.appendChild(nodeFirstName);
+        msgFirstName.classList.add('password-warning');
         messagesContainer.insertBefore(msgFirstName, messagesContainer.childNodes[0]);
     }
     if (lastName.length > 0 && password.toUpperCase().includes(lastName.toUpperCase())) {
         let msgLastName = document.createElement("p");
         let nodeLastName = document.createTextNode("❌ Please do not include your last name in your password");
         msgLastName.appendChild(nodeLastName);
+        msgLastName.classList.add('password-warning');
         messagesContainer.insertBefore(msgLastName, messagesContainer.childNodes[0]);
     }
 
