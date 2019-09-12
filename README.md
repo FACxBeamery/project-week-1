@@ -4,4 +4,4 @@
 ### A webpage testing the strength of your password.
 
 
-### Made by Beamery Graduates, Joao and Thomas
+### Made by Beamery Graduates, Joao and Thomas.
