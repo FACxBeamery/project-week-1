@@ -7,7 +7,7 @@
 
 By checking your inputted password against set regular expressions, the webpage highlights whether:
 
-(a) your password is at least 6 characters long;
+(a) your password is at least 6 alphanumeric characters long;
 (b) your password contains an uppercase letter;
 (c) your password contains an lowercase letter;
 (d) and whether your password contains a number.
