@@ -14,6 +14,10 @@ html, body {
     color: #434371;
 }
 
+.disabled {
+    display: none;
+}
+
 .section__heading {
     padding-bottom: 0.4rem;
     border-bottom: 6px groove #4ec59f;

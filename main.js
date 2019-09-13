@@ -17,7 +17,14 @@ document.getElementById('password').addEventListener("input", (event) => {
     const messagesContainer = document.getElementById('messages');
     resetMessagesContainer(messagesContainer);
     
-    const password = event.target.value;  
+    const password = event.target.value;
+
+    let sectionHeader = document.getElementById("sectionHeader");
+    if (password.length > 0) {
+        sectionHeader.className = "section__heading";
+    } else {
+        sectionHeader.className = "disabled";
+    }
 
     // At least 6 alphanumerical and/or special characters long
     const regex1 = /^[A-Za-z0-9!@#$%^&*(),.?":{}|<>]{6,}$/;
