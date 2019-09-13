@@ -20,6 +20,7 @@ By checking the inputted password against set regular expxtressions, the webpage
 * and whether your password contains a number.
 
 
+### Stretch Goals
 Based on the above criteria, the webpage returns a password strength score. If the first and/or last name are included in the password, the program will warn the user. 
 A 'RESET FORM' button is born so that you can try to improve your password strength score.
 
