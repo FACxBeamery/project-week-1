@@ -12,19 +12,19 @@ document.getElementById('password').addEventListener("input", (event) => {
     resetFormField(event.target);
     resetTestButton();
 
-    let messagesContainer = document.getElementById('messages');
+    const messagesContainer = document.getElementById('messages');
     resetMessagesContainer(messagesContainer);
     
-    let password = event.target.value;  
+    const password = event.target.value;  
 
     // At least 6 alphanumerical characters long
-    let regex1 = /^[A-Za-z0-9]{6,}$/;
+    const regex1 = /^[A-Za-z0-9]{6,}$/;
     // at least one upper case letter
-    let regex2 = /[A-Z]+/;
+    const regex2 = /[A-Z]+/;
     // at least one lower case letter
-    let regex3 = /[a-z]+/;  
+    const regex3 = /[a-z]+/;  
     // at least one number
-    let regex4 = /[0-9]+/;
+    const regex4 = /[0-9]+/;
     
     if (regex1.test(password)) {
         addRegexDesc("✅ At least 6 alphanumerical characters long", messagesContainer);
@@ -54,13 +54,13 @@ document.getElementById('test-button').addEventListener("click", (event) => {
 
     createResetFormButton();
 
-    let messagesContainer = document.getElementById('messages');
-    let firstNameElem = document.getElementById('firstname');
-    let firstName = firstNameElem.value;
-    let lastNameElem = document.getElementById('lastname');
-    let lastName = lastNameElem.value;
-    let passwordElem =  document.getElementById('password');
-    let password = passwordElem.value;
+    const messagesContainer = document.getElementById('messages');
+    const firstNameElem = document.getElementById('firstname');
+    const firstName = firstNameElem.value;
+    const lastNameElem = document.getElementById('lastname');
+    const lastName = lastNameElem.value;
+    const passwordElem =  document.getElementById('password');
+    const password = passwordElem.value;
     
     if (firstName.length === 0 && !firstNameElem.classList.contains('form__input--red')) {
         addFormWarning(firstNameElem); 
@@ -105,8 +105,8 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     if (messagesContainer.getElementsByClassName('password-strength').length > 0) {
         messagesContainer.getElementsByClassName('password-strength')[0].textContent = score;
     } else if (password.length > 0) {
-        let passwordStrength = document.createElement("p");
-        let nodePassword = document.createTextNode(score);
+        const passwordStrength = document.createElement("p");
+        const nodePassword = document.createTextNode(score);
         passwordStrength.appendChild(nodePassword);
         passwordStrength.classList.add('password-strength')
         messagesContainer.insertBefore(passwordStrength, messagesContainer.childNodes[0]);
@@ -148,20 +148,20 @@ const resetMessagesContainer = ((container) => {
  * Appends a button that resets the form to the form buttons' container
  */
 const createResetFormButton = (() => {
-    let button = document.createElement("button");
+    const button = document.createElement("button");
     button.classList.add('form__button')
     button.style.color = "#d46d1e";
     button.innerHTML = "RESET FORM";
-    let form = document.getElementById("form");
-    let buttonsContainer = document.getElementById('form__buttons-wrapper');
+    const form = document.getElementById("form");
+    const buttonsContainer = document.getElementById('form__buttons-wrapper');
     buttonsContainer.appendChild(button);
     button.addEventListener("click", (event) => {
         // remove all child elements of form that are a P
-        var elements = form.getElementsByTagName('p');
+        let elements = form.getElementsByTagName('p');
         while (elements[0]) elements[0].parentNode.removeChild(elements[0]);
 
         // iterate through all input elements and remove the form__input--red class
-        var inputs = form.getElementsByTagName('input');
+        let inputs = form.getElementsByTagName('input');
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].classList.remove('form__input--red')
         }
@@ -174,8 +174,8 @@ const createResetFormButton = (() => {
  * @param {DOM Element} inputElem 
  */
 const addFormWarning = ((inputElem) => {
-    let requiredMsg1 = document.createElement("p");
-    let nodeMsg1 = document.createTextNode("This Field is Required.");
+    const requiredMsg1 = document.createElement("p");
+    const nodeMsg1 = document.createTextNode("This Field is Required.");
     requiredMsg1.appendChild(nodeMsg1);
     inputElem.classList.add('form__input--red');
     requiredMsg1.classList.add('form__warning');
@@ -188,8 +188,8 @@ const addFormWarning = ((inputElem) => {
  * @param {DOM Element} container 
  */
 const addPasswordWarning = ((message, container) => {
-    let msgFirstName = document.createElement("p");
-    let nodeFirstName = document.createTextNode(message);
+    const msgFirstName = document.createElement("p");
+    const nodeFirstName = document.createTextNode(message);
     msgFirstName.appendChild(nodeFirstName);
     msgFirstName.classList.add('password-warning');
     container.insertBefore(msgFirstName, container.childNodes[0])
@@ -201,8 +201,8 @@ const addPasswordWarning = ((message, container) => {
  * @param {DOM Element} container 
  */
 const addRegexDesc = ((message, container) => {
-    let msg1 = document.createElement("p");
-    let node1 = document.createTextNode(message);
+    const msg1 = document.createElement("p");
+    const node1 = document.createTextNode(message);
     msg1.classList.add('regex');
     msg1.appendChild(node1);
     container.appendChild(msg1)
