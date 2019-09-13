@@ -1,12 +1,7 @@
-document.getElementById('firstname').addEventListener("input", (event) => { 
+document.addEventListener('input', function (event) {
     resetFormField(event.target);
     resetTestButton();
-});
-
-document.getElementById('lastname').addEventListener("input", (event) => { 
-    resetFormField(event.target);
-    resetTestButton();
-});
+}, false);
 
 document.getElementById('password').addEventListener("input", (event) => {
     resetFormField(event.target);
