@@ -12,7 +12,6 @@ By checking your inputted password against set regular expressions, the webpage 
 * your password contains an lowercase letter;
 * and whether your password contains a number.
 
-![](https://i.ibb.co/mXY2d8Q/chrome-capture.gif)
 
 Based on the above criteria, the webpage returns a password strength score. If the first and/or last name are included in the password, the program will warn the user. 
 A 'RESET FORM' button is born so that you can try to improve your password strength score.
