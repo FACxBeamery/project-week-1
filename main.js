@@ -12,8 +12,8 @@ document.getElementById('password').addEventListener("input", (event) => {
     
     const password = event.target.value;  
 
-    // At least 6 alphanumerical characters long
-    const regex1 = /^[A-Za-z0-9]{6,}$/;
+    // At least 6 alphanumerical and/or special characters long
+    const regex1 = /^[A-Za-z0-9!@#$%^&*(),.?":{}|<>]{6,}$/;
     // at least one upper case letter
     const regex2 = /[A-Z]+/;
     // at least one lower case letter
@@ -22,7 +22,7 @@ document.getElementById('password').addEventListener("input", (event) => {
     const regex4 = /[0-9]+/;
     
     if (regex1.test(password)) {
-        addRegexDesc("✅ At least 6 alphanumerical characters long", messagesContainer);
+        addRegexDesc("✅ At least 6 alphanumerical and/or special characters long", messagesContainer);
     }
     if (regex2.test(password)) {
         addRegexDesc("✅ At least one upper case letter", messagesContainer);
