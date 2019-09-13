@@ -1,6 +1,13 @@
 document.addEventListener('input', function (event) {
     resetFormField(event.target);
     resetTestButton();
+    if (event.target.attributes["name"].value != "password") {
+        //Name validation: replaces any inputted special characters with an empty string, as the user types.
+        // https://stackoverflow.com/a/26900132
+        if ((/[^A-zÀ-ú-]/).test(event.data)) {
+            event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+        }
+    }
 }, false);
 
 document.getElementById('password').addEventListener("input", (event) => {
