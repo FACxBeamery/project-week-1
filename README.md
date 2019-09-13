@@ -10,7 +10,7 @@ A user needs a way to test the strength of, and therefore, improve their passwor
 To achieve this:
 1. The user needs a way to input their password into the webpage. This was fulfilled by including a form;
 2. The user needs to understand what a 'strong' password looks like. Adding dynamic 'checkpoints' to their input reveals the strength criteria that the program is following. 
-3. Filling out their first and last name points out the need to avoid using these data in their password. 
+3. Pointing out the need to avoid using their first and last name in their password. 
 
 By checking the inputted password against set regular expxtressions, the webpage highlights whether:
 
