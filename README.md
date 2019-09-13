@@ -5,13 +5,14 @@
 
 ### A webpage testing the strength of your password.
 
-A user needs a way to test the strength of, and therefore, improve, their password to achieve better security.
+A user needs a way to test the strength of, and therefore, improve their password to achieve better security.
 
 To achieve this:
-1. The user needed a way to input their password into the webpage. This was fulfilled by include a form in the webpage;
-2.
+1. The user needs a way to input their password into the webpage. This was fulfilled by including a form;
+2. The user needs to understand what a 'strong' password looks like. Adding dynamic 'checkpoints' to their input reveals the strength criteria that the program is following. 
+3. Filling out their first and last name points out the need to avoid using these data in their password. 
 
-By checking your inputted password against set regular expressions, the webpage highlights whether:
+By checking the inputted password against set regular expxtressions, the webpage highlights whether:
 
 * your password is at least 6 alphanumeric/diacritic characters long;
 * your password contains an uppercase letter;
