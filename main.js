@@ -76,11 +76,6 @@ document.getElementById('test-button').addEventListener("click", (event) => {
     let score = '';
 
     switch (document.getElementsByClassName('regex').length) {
-        case 0:
-            if (password) {
-                score = 'Password Strength: BADDDD 👺';
-            }
-            break;
         case 1:
             score = 'Password Strength: MEH 🤒';
             break;
@@ -94,6 +89,9 @@ document.getElementById('test-button').addEventListener("click", (event) => {
             score = 'Password Strength: EXCELLENT 🙏';
             break;
         default:
+            if (password) {
+                score = 'Password Strength: BADDDD 👺';
+            }
             break;
     }
 
