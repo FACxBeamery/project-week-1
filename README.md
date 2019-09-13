@@ -18,5 +18,7 @@ Both HTML5 and vanilla JavaScript was used for the client-side validation. HTML5
 
 After improvements, a Google a11y audit described the accessibility of the webpage with a score of 100. The initial accessibility of the webpage was scored at 94.
 
+<a href="https://ibb.co/TwvFH4W"><img src="https://i.ibb.co/RgvVC3j/audit-screenshot-1.png" alt="audit-screenshot-1" border="0"></a>
+
 
 ##### Made by Beamery Graduates, Joao (@Joaoviana) and Thomas (@TKostrzewski).
