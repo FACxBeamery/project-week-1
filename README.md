@@ -5,6 +5,12 @@
 
 ### A webpage testing the strength of your password.
 
+A user needs a way to test the strength of, and therefore, improve, their password to achieve better security.
+
+To achieve this:
+1. The user needed a way to input their password into the webpage. This was fulfilled by include a form in the webpage;
+2.
+
 By checking your inputted password against set regular expressions, the webpage highlights whether:
 
 * your password is at least 6 alphanumeric/diacritic characters long;
@@ -21,6 +27,8 @@ Both HTML5 and vanilla JavaScript was used for the client-side validation. HTML5
 After improvements, a Google a11y audit described the accessibility of the webpage with a score of 100. The initial accessibility of the webpage was scored at 94.
 
 <a href="https://ibb.co/TwvFH4W"><img src="https://i.ibb.co/RgvVC3j/audit-screenshot-1.png" alt="audit-screenshot-1" border="0"></a>
+
+
 
 
 ##### Made by Beamery Graduates, Joao (@Joaoviana) and Thomas (@TKostrzewski).
