@@ -22,6 +22,11 @@ By checking the inputted password against set regular expxtressions, the webpage
 Based on the above criteria, the webpage returns a password strength score. If the first and/or last name are included in the password, the program will warn the user. 
 A 'RESET FORM' button is born so that you can try to improve your password strength score.
 
+### Example -- strong password
+
+<a href="https://ibb.co/8Dr27pk"><img src="https://i.ibb.co/6RHbWxQ/Screenshot-2019-09-13-at-14-46-44.png" alt="Screenshot-2019-09-13-at-14-46-44" border="0"></a>
+
+
 ### Stretch Goals
 Both HTML5 and vanilla JavaScript was used for the client-side validation. HTML5 was used to ensure the form was populated by adding a 'required' attribute to the 'input' HTML element. Once the user input exists, the user's password is validated using vanilla JavaScript to ensure the user's first and/or last names do not appear in the password. This limits the predictability of the user's inputted password.
 
